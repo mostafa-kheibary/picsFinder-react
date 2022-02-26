@@ -1,7 +1,6 @@
+import PicsContainer from '../../Layouts/PicsContainer/PicsContainer';
 const Home = () => {
-  return (
-    <div>Home</div>
-  );
+  return <PicsContainer />;
 };
 
 export default Home;
