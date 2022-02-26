@@ -1,0 +1,24 @@
+header{
+  padding: 15px 30px 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.158);
+}
+.left-section{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.header-logo{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo-text{
+  font-weight: 500;
+  font-size: 20px;
+}
+.logo-image{
+  width: 50px;
+}

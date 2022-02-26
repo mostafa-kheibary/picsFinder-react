@@ -1,0 +1,14 @@
+.header-nav{
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  flex-direction: row-reverse ;
+}
+.nav-link{
+  color: var(--black);
+  font-weight: 300;
+  cursor: pointer;
+}
+.nav-link:hover{
+  color: black;
+}
