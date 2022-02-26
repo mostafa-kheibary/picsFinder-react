@@ -1,7 +1,7 @@
-import React from 'react';
-import Header from '../../Layouts/Header/Header';
 const Home = () => {
-  return <Header />;
+  return (
+    <div>Home</div>
+  );
 };
 
 export default Home;

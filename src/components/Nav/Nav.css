@@ -6,9 +6,13 @@
 }
 .nav-link{
   color: var(--black);
+  text-decoration: none;
   font-weight: 300;
   cursor: pointer;
 }
 .nav-link:hover{
   color: black;
+}
+.hh{
+  color: red !important;
 }

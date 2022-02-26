@@ -6,7 +6,7 @@
 .search-input {
   background-color: var(--gray);
   width: 100%;
-  padding: 13px 13px 13px 35px;
+  padding: 13px 13px 13px 40px;
   border-radius: 50px;
   border: none;
 }
@@ -18,7 +18,8 @@
 }
 .search-icon {
   position: absolute;
-  left: 10px;
+  font-size: 20px;
+  left: 13px;
   top: 50%;
   transform: translateY(-50%);
   color: #8e8e8e;
