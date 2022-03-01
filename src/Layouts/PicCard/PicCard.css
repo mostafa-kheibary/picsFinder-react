@@ -34,7 +34,7 @@
   right: 20px;
   top: 20px;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
   cursor: pointer;
   background-color: transparent;
@@ -54,13 +54,14 @@
 }
 .dropdown-text{
   font-weight: 500;
+  color: var(--black);
 }
 .dropdown-item{
   text-decoration: none;
   color: var(--black);
   display: flex;
   gap: 10px;
-  padding: 12px;
+  padding: 17px;
 }
 .dropdown-item:hover{
   border-radius: 5px;
