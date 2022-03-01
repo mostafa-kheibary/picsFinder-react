@@ -1,0 +1,12 @@
+.status{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.status-text{
+  font-size: 22px;
+  font-weight: 500;
+}
+.status-count{
+  font-weight: 300;
+}

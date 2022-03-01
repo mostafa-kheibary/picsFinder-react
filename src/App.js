@@ -4,6 +4,7 @@ import { PicsContextProvider } from './context/picsContext';
 import Home from './pages/Home/Home';
 import Header from './Layouts/Header/Header';
 import About from './pages/About/About';
+import Search from './pages/Search/Search';
 import './App.css';
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/search' element={<Search />} />
           <Route path='/about' element={<About />} />
         </Routes>
       </BrowserRouter>

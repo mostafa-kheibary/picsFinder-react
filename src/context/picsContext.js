@@ -8,11 +8,15 @@ const PicsContextProvider = ({ children }) => {
     images: [],
     page: 2,
     loader: false,
+    resultOf: '',
+    resultCount: 0,
   };
   const [state, dispatch] = useReducer(PicsReducer, initialState);
-  const [text, setText] = useState('');
   const search = async (text) => {
-    setText(text);
+    dispatch({
+      type: 'SET_RESULT_OF',
+      payload: text,
+    });
     dispatch({
       type: 'SET_LOADER',
       payload: true,
@@ -23,6 +27,10 @@ const PicsContextProvider = ({ children }) => {
       payload: false,
     });
     dispatch({
+      type: 'SET_COUNT',
+      payload: data.total,
+    });
+    dispatch({
       type: 'SEARCH_RESULT',
       payload: data.results,
     });
@@ -31,12 +39,14 @@ const PicsContextProvider = ({ children }) => {
     dispatch({
       type: 'NEXT_PAGE',
     });
-    const data = await getData(`search/photos?query=${text}`, state.page);
+    const data = await getData(
+      `search/photos?query=${state.resultOf}`,
+      state.page
+    );
     dispatch({
       type: 'NEW_RESUALT',
       payload: data.results,
     });
-    console.log(data);
   };
   return (
     <PicsContext.Provider

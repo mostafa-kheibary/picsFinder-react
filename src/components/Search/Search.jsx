@@ -10,6 +10,7 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     search(text);
+    setText('');
   };
   return (
     <div className='search'>
