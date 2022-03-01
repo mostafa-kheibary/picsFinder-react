@@ -1,24 +1,63 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState, useContext } from 'react';
+import PicsContext from '../../context/picsContext';
+import { motion } from 'framer-motion';
 import './PicCard.css';
 
 const PicCard = ({ data }) => {
   const { urls, alt_description } = data;
   const image = useRef();
-  const [span, setSpan] = useState(20);
+  // states
+  const [span, setSpan] = useState(30);
   const [load, setLoad] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  // context
+  const { downloadImage } = useContext(PicsContext);
 
+  // local function
   const onLoad = () => {
     const span = Math.round((image.current.clientHeight + 10) / 12);
     setSpan(span);
     setLoad(true);
   };
 
+  const handleOpen = () => {
+    setDropdown(!dropdown);
+  };
+  const handleCloseDropdown = () => {
+    setDropdown(false);
+  };
   const height = load === true ? '100%' : 'none';
 
   return (
-    <div style={{ gridRowEnd: ` span ${span}` }} className='card'>
-      <div className='card_over-lay'>
-
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      style={{ gridRowEnd: ` span ${span}` }}
+      className='card'
+    >
+      <div onMouseLeave={handleCloseDropdown} className='card_over-lay'>
+        <button
+          onClick={handleOpen}
+          className='more-info fa-solid fa-ellipsis-vertical'
+        >
+          {dropdown === true && (
+            <div className='dropdown-container'>
+              <a
+                href={urls.full}
+                download='image.jpg'
+                target='_blank'
+                className='dropdown-item download'
+              >
+                <i className='fa-solid fa-download dropdown-icon'></i>
+                <span className='dropdown-text'>download</span>
+              </a>
+              <div className='dropdown-item share'>
+                <i className='fa-solid fa-share-nodes dropdown-icon'></i>
+                <span className='dropdown-text'>share</span>
+              </div>
+            </div>
+          )}
+        </button>
       </div>
       <img
         onLoad={onLoad}
@@ -28,7 +67,7 @@ const PicCard = ({ data }) => {
         src={urls.thumb}
         alt={alt_description}
       />
-    </div>
+    </motion.div>
   );
 };
 

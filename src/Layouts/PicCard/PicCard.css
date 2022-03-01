@@ -6,6 +6,7 @@
   border-radius: 15px;
   height:auto;
   margin-bottom: 20px;
+  
 }
 .card-image{
   width: 100%;
@@ -26,4 +27,42 @@
 .card:hover > .card_over-lay{
   opacity: 1;
   visibility: visible;
+}
+.more-info{
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+}
+.dropdown-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  background-color: white;
+  color: black;
+}
+.dropdown-text,.dropdown-icon{
+  font-size: 15px;
+}
+.dropdown-text{
+  font-weight: 500;
+}
+.dropdown-item{
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+.dropdown-item:hover{
+  border-radius: 5px;
+  background-color: rgb(243, 243, 243);
 }

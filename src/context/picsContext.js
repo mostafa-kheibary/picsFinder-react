@@ -6,7 +6,7 @@ const PicsContext = createContext();
 const PicsContextProvider = ({ children }) => {
   const initialState = {
     images: [],
-    page: 1,
+    page: 2,
     loader: false,
   };
   const [state, dispatch] = useReducer(PicsReducer, initialState);
@@ -27,7 +27,6 @@ const PicsContextProvider = ({ children }) => {
       payload: data.results,
     });
   };
-
   const nextPage = async () => {
     dispatch({
       type: 'NEXT_PAGE',

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import PicsContext from '../../context/picsContext';
 import PicCard from '../PicCard/PicCard';
 import './PicContainer.css';
@@ -6,8 +7,12 @@ const PicsContainer = () => {
   const { state,nextPage } = useContext(PicsContext);
   return (
     <div className='image-container'>
-      {state.loader !==true ?(state.images.map((image) =><PicCard key={image.id} data={image}/>)):<h1>loader</h1>}
-      <button onClick={nextPage}>next</button>
+      <div className="wrapper">
+      {state.loader !==true ?(state.images.map((image) =><PicCard key={uuidv4()} data={image}/>)):<h1>loader</h1>}
+      </div>
+      <div className="status">
+      <button className='load-more' onClick={nextPage}>next</button>
+      </div>
     </div>
   );
 };

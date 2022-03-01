@@ -1,7 +1,23 @@
 .image-container{
   padding: 20px 50px 0 50px;
-  display: grid;
+}
+.wrapper{
+    display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 12px;
   grid-gap: 0 25px;
+}
+.status{    
+  text-align: center;
+}
+.load-more{
+  padding: 10px;
+  width: 150px;
+  background-color: var(--red);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 25px;
+  text-align: center;
 }
