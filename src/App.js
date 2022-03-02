@@ -8,16 +8,16 @@ import Search from './pages/Search/Search';
 import './App.css';
 const App = () => {
   return (
-    <PicsContextProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <PicsContextProvider>
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/search' element={<Search />} />
+          <Route path='search/:text' element={<Search />} />
           <Route path='/about' element={<About />} />
         </Routes>
-      </BrowserRouter>
-    </PicsContextProvider>
+      </PicsContextProvider>
+    </BrowserRouter>
   );
 };
 

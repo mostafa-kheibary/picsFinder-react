@@ -1,17 +1,17 @@
 const PicsReducer = (state, action) => {
   switch (action.type) {
-    case 'SEARCH_RESULT':
+    case 'NEW-RESULT':
+      return { ...state, images: [...state.images,...action.payload ]};
+    case 'SET_DATA':
+      return { ...state, data: action.payload };
+    case 'SEARCH_RESULT': 
       return { ...state, images: action.payload };
     case 'SET_LOADER':
       return { ...state, loader: action.payload };
     case 'NEXT_PAGE':
       return { ...state, page: state.page + 1 };
-    case 'NEW_RESUALT':
-      return { ...state, images: [...state.images, ...action.payload] };
-    case 'SET_RESULT_OF':
-      return { ...state, resultOf: action.payload };
-    case 'SET_COUNT':
-      return { ...state, resultCount: action.payload };
+    case 'CLEAR':
+      return { ...state, images: [], data: [] };
     default:
       return state;
   }

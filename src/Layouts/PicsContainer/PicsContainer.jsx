@@ -6,22 +6,16 @@ import Loader from '../../components/Loader/Loader';
 import './PicContainer.css';
 const PicsContainer = () => {
   const { state, nextPage } = useContext(PicsContext);
+
+  const renderImage = state.images.map((image) => {
+    return <PicCard key={uuidv4()} data={image} />;
+  });
+
   return (
     <div className='image-container'>
       <div className='wrapper'>
-        {state.loader !== true ? (
-          state.images.map((image) => <PicCard key={uuidv4()} data={image} />)
-        ) : (
-          <Loader />
-        )}
+        {state.loader !== true ? renderImage : <Loader />}
       </div>
-      {state.images.length > 0 && state.loader !== true && (
-        <div className='more-image-container'>
-          <button className='load-more' onClick={nextPage}>
-            next
-          </button>
-        </div>
-      )}
     </div>
   );
 };

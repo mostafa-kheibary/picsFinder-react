@@ -1,5 +1,4 @@
-import React, { useRef, useState, useContext } from 'react';
-import PicsContext from '../../context/picsContext';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './PicCard.css';
 
@@ -10,8 +9,6 @@ const PicCard = ({ data }) => {
   const [span, setSpan] = useState(30);
   const [load, setLoad] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-  // context
-  const { downloadImage } = useContext(PicsContext);
 
   // local function
   const onLoad = () => {
