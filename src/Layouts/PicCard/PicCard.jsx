@@ -1,9 +1,11 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './PicCard.css';
 
 const PicCard = ({ data }) => {
-  const { urls, alt_description } = data;
+  const { urls, alt_description, id } = data;
+  const navigate = useNavigate();
   const image = useRef();
   // states
   const [span, setSpan] = useState(30);
@@ -17,7 +19,11 @@ const PicCard = ({ data }) => {
     setLoad(true);
   };
 
-  const handleOpen = () => {
+  const handlePageChange = (id) => {
+    navigate(`/photo/${id}`);
+  };
+  const handleOpen = (e) => {
+    e.stopPropagation();
     setDropdown(!dropdown);
   };
   const handleCloseDropdown = () => {
@@ -27,6 +33,7 @@ const PicCard = ({ data }) => {
 
   return (
     <motion.div
+      onClick={() => handlePageChange(id)}
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       style={{ gridRowEnd: ` span ${span}` }}

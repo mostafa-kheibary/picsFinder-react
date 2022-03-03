@@ -18,7 +18,9 @@ const PicsContextProvider = ({ children }) => {
       type: 'SET_LOADER',
       payload: true,
     });
-    const data = await getData(`search/photos?query=${text}`, 1);
+    const data = await getData(
+      `/search/photos?query=${text}&per_page=10&page=${1}`
+    );
     dispatch({
       type: 'SEARCH_RESULT',
       payload: data.results,
@@ -34,11 +36,18 @@ const PicsContextProvider = ({ children }) => {
   };
   // load random image
   const loadRandom = async () => {
+    dispatch({
+      type: 'SET_LOADER',
+      payload: true,
+    });
     const data = await getRandom(30);
-    console.log(data);
     dispatch({
       type: 'NEW-RESULT',
       payload: data,
+    });
+    dispatch({
+      type: 'SET_LOADER',
+      payload: false,
     });
   };
   const clear = () => {
@@ -62,7 +71,6 @@ const PicsContextProvider = ({ children }) => {
   return (
     <PicsContext.Provider
       value={{
-        data: state.data,
         state,
         search,
         nextPage,

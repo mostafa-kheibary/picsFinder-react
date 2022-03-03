@@ -1,0 +1,72 @@
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import getData from '../../API/unsplash';
+import Loader from '../../components/Loader/Loader';
+import './Pic.css';
+
+const Pics = () => {
+  const params = useParams();
+  const [image, setImage] = useState(null);
+  useEffect(async () => {
+    const image = await getData(`/photos/${params.id}`);
+    setImage(image);
+    console.log(image);
+  }, []);
+  const renderImage = image ? (
+    <div className='pic-page__image-container'>
+      <div className='pic-page_image-section'>
+        <img className='pic-page-image' src={image.urls.regular} alt='' />
+        <div className='pic-page__like-count'>
+          <span className='pic-page__like-count__text'>{image.likes}</span>
+          <i className='fa-solid fa-heart pic-page__like-count__icon'></i>
+        </div>
+      </div>
+      <div className='pic-page__content'>
+        <div className='pic-page__content__head'>
+          <div className='tag-container'>
+            {image.tags_preview.map((tag, i) => (
+              <Link to={`/search/${tag.title}`} className='tags' key={i}>
+                {tag.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <h4 className='pic-page__title'>
+          {image.description ? image.description : 'This image dont have Title'}
+        </h4>
+        <p className='pic-page__description'>
+          In publishing and graphic design, Lorem ipsum is a placeholder text
+          commonly used to demonstrate the visual.
+        </p>
+        <div className='pic-page__content__buttons'>
+          <button className='button share-button'>share</button>
+          <button className='button download-button'>download</button>
+        </div>
+        <div className='pic-page__user-info'>
+          <div>
+            <img
+              className='pic-page__user-info__avatar'
+              src={image.user.profile_image.medium}
+              alt=''
+            />
+          </div>
+          <div>
+            <a
+              href={image.user.links.html}
+              className='pic-page__user-info__user-name'
+            >
+              {image.user.username}
+            </a>
+            <span className='pic-page__user-info__name'>{image.user.name}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <Loader />
+  );
+
+  return <div className='pic-page'>{renderImage}</div>;
+};
+
+export default Pics;

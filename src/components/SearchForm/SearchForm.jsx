@@ -1,15 +1,13 @@
 import { useState, useContext } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import PicsContext from '../../context/picsContext';
-import './Search.css';
+import './SearchForm.css';
 
 // the component
-const Search = () => {
+const SearchForm = () => {
   const [text, setText] = useState('');
-  const { search } = useContext(PicsContext);
   const navigate = useNavigate();
-  const params = useParams();
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -17,7 +15,6 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search/${text}`);
-    search(text);
     setText('');
   };
   return (
@@ -36,4 +33,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchForm;

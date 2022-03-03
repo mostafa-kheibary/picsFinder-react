@@ -1,0 +1,31 @@
+.hero-section{
+  padding:50px 100px 25px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1980px;
+  margin: 0 auto;
+}
+.hero-section__content{
+  margin-top: -50px;
+}
+.hero-section__main-image{
+  width: 500px;
+  border-radius: 15px;
+}
+.hero-section__title{
+  font-size: 60px;
+  font-weight: 500;
+}
+.hero-section__info{
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+.images-info{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
