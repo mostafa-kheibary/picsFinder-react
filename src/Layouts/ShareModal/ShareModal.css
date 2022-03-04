@@ -1,0 +1,81 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  transform: scale(1);
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.322);
+  width: 100%;
+  height: 100%;
+}
+.close-modal {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.close-modal__icon {
+  color: red;
+  font-size: 18px;
+}
+.share-modal {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.137);
+}
+.share-modal-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.share-modal__image-link {
+  margin-top: 20px;
+  position: relative;
+}
+.share-modal__image-link__input {
+  width: 100%;
+  padding: 12px 80px 12px 12px;
+}
+.share-modal__image-link__input:focus {
+  outline: none;
+}
+.share-modal__image-link__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  padding: 6px 15px 6px 15px;
+  border: none;
+  background-color: rgb(255, 75, 75);
+  color: white;
+  cursor: pointer;
+}
+.copy-notif {
+  position: absolute;
+  right: 16px;
+  bottom: 40px;
+  width: fit-content;
+  background-color: rgb(97, 97, 97);
+  color: white;
+  font-size: 10px;
+  font-weight: 300;
+  padding: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease;
+}
+.copy-notif.show {
+  bottom: 50px; 
+  opacity: 1;
+  visibility: visible;
+}

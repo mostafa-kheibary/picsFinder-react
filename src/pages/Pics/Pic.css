@@ -106,6 +106,7 @@
   background-color: #4659b9;
 }
 .pic-page__user-info {
+  z-index: 1;
   position: absolute;
   bottom: 30px;
   right: 30px;

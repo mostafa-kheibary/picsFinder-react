@@ -10,6 +10,7 @@ const PicsContextProvider = ({ children }) => {
     images: [],
     page: 2,
     loader: false,
+    modalShow: false,
   };
   const [state, dispatch] = useReducer(PicsReducer, initialState);
   // search image with the giben text
@@ -55,6 +56,11 @@ const PicsContextProvider = ({ children }) => {
       type: 'CLEAR',
     });
   };
+  const changeModal = () => {
+    dispatch({
+      type: 'SET_MODAL',
+    });
+  };
   const nextPage = async () => {
     dispatch({
       type: 'NEXT_PAGE',
@@ -76,6 +82,7 @@ const PicsContextProvider = ({ children }) => {
         nextPage,
         loadRandom,
         clear,
+        changeModal,
       }}
     >
       {children}
