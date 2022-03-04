@@ -1,0 +1,18 @@
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+}
+.not-found__title {
+  font-size: 150px;
+  color: rgb(255, 98, 98);
+}
+.not-found__description {
+  margin-top: -50px;
+  letter-spacing: 8px;
+}
+.not-found__button{
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+}

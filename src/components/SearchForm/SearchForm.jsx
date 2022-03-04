@@ -14,8 +14,10 @@ const SearchForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/search/${text}`);
-    setText('');
+    if (text.trim().lenght > 0) {
+      navigate(`/search/${text}`);
+      setText('');
+    }
   };
   return (
     <div className='search'>
