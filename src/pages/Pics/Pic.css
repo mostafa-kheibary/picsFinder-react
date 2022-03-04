@@ -1,23 +1,26 @@
 .pic-page {
   margin-top: 25px;
+  padding:30px 50px 20px 50px;
 }
 .pic-page__image-container {
   display: flex;
   justify-content: space-between;
+  /* margin: 35px 50px 25px 50px; */
   margin: 0 auto;
+  max-width: 1980px;
   padding: 0;
   gap: 20px;
-  margin-top: 35px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.137);
-  width: 90%;
 }
 .pic-page_image-section {
+  width: 50%;
   border-radius: 15px 0 0 15px;
   position: relative;
   height: 600px;
 }
 .pic-page__content {
+  width: 50%;
   position: relative;
   padding: 40px;
 }
@@ -46,6 +49,7 @@
 }
 .pic-page__title {
   word-wrap: break-word;
+  width: fit-content;
   overflow-wrap: break-word;
   margin-top: 25px;
   font-size: 40px;
@@ -102,7 +106,7 @@
   transition: all 150ms ease;
   background-color: #627bff;
 }
-.share-button:hover{
+.share-button:hover {
   background-color: #4659b9;
 }
 .pic-page__user-info {

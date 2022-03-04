@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import './PicCard.css';
 
 const PicCard = ({ data }) => {
-  const { urls, alt_description, id } = data;
+  const { urls, alt_description, id, description } = data;
   const navigate = useNavigate();
   const image = useRef();
   // states
@@ -40,6 +40,9 @@ const PicCard = ({ data }) => {
       className='card'
     >
       <div onMouseLeave={handleCloseDropdown} className='card_over-lay'>
+        <h4 className='card-over-lay__title'>
+          {description && description.slice(0, 15)}{description && ' ...'}
+        </h4>
         <button
           onClick={handleOpen}
           className='more-info fa-solid fa-ellipsis-vertical'
@@ -55,10 +58,6 @@ const PicCard = ({ data }) => {
                 <i className='fa-solid fa-download dropdown-icon'></i>
                 <span className='dropdown-text'>download</span>
               </a>
-              <div className='dropdown-item share'>
-                <i className='fa-solid fa-share-nodes dropdown-icon'></i>
-                <span className='dropdown-text'>share</span>
-              </div>
             </div>
           )}
         </button>

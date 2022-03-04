@@ -43,6 +43,9 @@
   position: relative;
 }
 .share-modal__image-link__input {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
   width: 100%;
   padding: 12px 80px 12px 12px;
 }
