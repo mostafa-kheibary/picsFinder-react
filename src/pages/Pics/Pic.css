@@ -14,7 +14,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.137);
 }
 .pic-page_image-section {
-  width: 50%;
+  width: auto;
   border-radius: 15px 0 0 15px;
   position: relative;
   height: 600px;
@@ -48,6 +48,7 @@
   transform: scale(1.05);
 }
 .pic-page__title {
+  max-width: 520px;
   word-wrap: break-word;
   width: fit-content;
   overflow-wrap: break-word;
