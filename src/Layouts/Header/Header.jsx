@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import Nav from '../../components/Nav/Nav';
 import logo from '../../image/logo.svg';
@@ -8,7 +9,9 @@ const Header = () => {
     <header>
       <div className='left-section'>
         <div className='header-logo'>
-          <img className='logo-image' src={logo} alt='logo of the website' />
+          <Link to={'/'}>
+            <img src={logo} className='logo-image' alt='logo of the website' />
+          </Link>
           <h1 className='logo-text'>Pics Finder</h1>
         </div>
         <SearchForm />

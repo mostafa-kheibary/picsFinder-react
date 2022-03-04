@@ -7,11 +7,12 @@ import './Pic.css';
 const Pics = () => {
   const params = useParams();
   const [image, setImage] = useState(null);
+
   useEffect(async () => {
     const image = await getData(`/photos/${params.id}`);
     setImage(image);
-    console.log(image);
   }, []);
+
   const renderImage = image ? (
     <div className='pic-page__image-container'>
       <div className='pic-page_image-section'>
@@ -35,12 +36,11 @@ const Pics = () => {
           {image.description ? image.description : 'This image dont have Title'}
         </h4>
         <p className='pic-page__description'>
-          In publishing and graphic design, Lorem ipsum is a placeholder text
-          commonly used to demonstrate the visual.
+          {image.alt_description ? image.alt_description : 'this image dont have description'}
         </p>
         <div className='pic-page__content__buttons'>
           <button className='button share-button'>share</button>
-          <button className='button download-button'>download</button>
+          <a href={image.urls.full} className='button download-button'>download</a>
         </div>
         <div className='pic-page__user-info'>
           <div>

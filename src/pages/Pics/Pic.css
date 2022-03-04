@@ -6,19 +6,20 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 0;
-  gap: 50px;
+  gap: 20px;
   margin-top: 35px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.137);
   width: 90%;
 }
 .pic-page_image-section {
+  border-radius: 15px 0 0 15px;
   position: relative;
   height: 600px;
 }
 .pic-page__content {
   position: relative;
-  padding: 20px;
+  padding: 40px;
 }
 .pic-page-image {
   border-radius: 15px 0 0 15px;
@@ -27,7 +28,6 @@
   height: 100%;
 }
 .tag-container {
-  padding: 10px;
   display: flex;
   gap: 20px;
 }
@@ -39,6 +39,10 @@
   color: white;
   border-radius: 50px;
   background-color: #0b3954;
+  transition: all 200ms ease;
+}
+.tags:hover {
+  transform: scale(1.05);
 }
 .pic-page__title {
   word-wrap: break-word;
@@ -47,7 +51,7 @@
   font-size: 40px;
   font-weight: 500;
 }
-.pic-page__like-count{
+.pic-page__like-count {
   position: absolute;
   left: 20px;
   bottom: 20px;
@@ -61,10 +65,10 @@
   width: fit-content;
   border-radius: 50px;
 }
-.pic-page__like-count__text{
+.pic-page__like-count__text {
   font-weight: 300;
 }
-.pic-page__like-count__icon{
+.pic-page__like-count__icon {
   color: #e85f5c;
 }
 .pic-page__description {
@@ -72,13 +76,14 @@
   font-size: 20px;
   font-weight: 300;
 }
-.pic-page__content__buttons{
+.pic-page__content__buttons {
   margin-bottom: 100px;
   display: flex;
   gap: 12px;
   margin-top: 25px;
 }
 .button {
+  text-decoration: none;
   padding: 12px 30px 12px 30px;
   color: white;
   border: none;
@@ -88,13 +93,19 @@
 }
 .download-button {
   background-color: #e85f5c;
+  transition: all 150ms ease;
+}
+.download-button:hover {
+  background-color: #ce504e;
 }
 .share-button {
+  transition: all 150ms ease;
   background-color: #627bff;
 }
-
-
-.pic-page__user-info{
+.share-button:hover{
+  background-color: #4659b9;
+}
+.pic-page__user-info {
   position: absolute;
   bottom: 30px;
   right: 30px;
@@ -110,15 +121,15 @@
   width: fit-content;
   border-radius: 50px;
 }
-.pic-page__user-info__avatar{
+.pic-page__user-info__avatar {
   border-radius: 50px;
 }
-.pic-page__user-info__user-name{
+.pic-page__user-info__user-name {
   text-decoration: none;
   color: black;
   display: block;
 }
-.pic-page__user-info__name{
-font-weight: 300;
-margin-top: -5px;
+.pic-page__user-info__name {
+  font-weight: 300;
+  margin-top: -5px;
 }
