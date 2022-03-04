@@ -7,7 +7,9 @@ const Nav = () => {
         <NavLink className='nav-link' to='/'>
           Home
         </NavLink>
-        <li className='nav-link'>Unsplash API</li>
+        <a href='https://unsplash.com' className='nav-link'>
+          Unsplash API
+        </a>
         <NavLink className='nav-link' to='/about'>
           About
         </NavLink>

@@ -6,7 +6,7 @@ import heroImage from '../../image/hero.png';
 import './Home.css';
 
 const Home = () => {
-  const { loadRandom, clear } = useContext(PicsContext);
+  const { loadRandom } = useContext(PicsContext);
   useEffect(() => {
     loadRandom();
   }, []);
