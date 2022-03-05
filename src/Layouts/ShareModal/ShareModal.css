@@ -82,3 +82,19 @@
   opacity: 1;
   visibility: visible;
 }
+@media screen and (max-width:700px){
+  .share-modal{
+    width: 400px;
+  }
+}
+@media screen and (max-width:450px){
+  .share-modal{
+    width: 90%;
+  }
+  .pic-page__title{
+    font-size: 30px !important;
+  }
+  .pic-page__description{
+    font-size: 15px !important;
+  }
+}

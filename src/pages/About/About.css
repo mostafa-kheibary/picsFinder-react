@@ -26,9 +26,11 @@
   padding: 10px;
   border-radius: 5px;
   transition: all 50ms ease;
-  background-color: rgba(214, 214, 214, 0.308);
+  transition: all 200ms ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
 }
-.about-page__button-title{
+
+.about-page__button-title {
   font-weight: 300;
   font-size: 14px;
 }

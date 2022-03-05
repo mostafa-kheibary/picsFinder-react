@@ -11,14 +11,23 @@ const Pics = () => {
   const [image, setImage] = useState(null);
   const { state, changeModal } = useContext(PicsContext);
 
-  useEffect(async () => {
+  const getImages = async () => {
     const image = await getData(`/photos/${params.id}`);
     setImage(image);
+  };
+  useEffect(() => {
+    getImages();
   }, []);
 
   const renderImage = image ? (
     <div className='pic-page__image-container'>
       <div className='pic-page_image-section'>
+        <button
+          onClick={() => window.history.back()}
+          className='pic-page__back-page'
+        >
+          {'<'}
+        </button>
         <img className='pic-page-image' src={image.urls.regular} alt='' />
         <div className='pic-page__like-count'>
           <span className='pic-page__like-count__text'>{image.likes}</span>

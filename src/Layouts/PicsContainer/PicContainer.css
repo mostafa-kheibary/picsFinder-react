@@ -38,3 +38,18 @@
 .no-resault_image {
   width: 300px;
 }
+
+@media screen and (max-width: 450px) {
+  .image-container {
+    padding: 0 25px;
+  }
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 300px){
+  .image-container{
+    padding: 0 10px;
+  }
+}

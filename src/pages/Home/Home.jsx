@@ -4,7 +4,6 @@ import PicsContainer from '../../Layouts/PicsContainer/PicsContainer';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import heroImage from '../../image/hero.png';
 import './Home.css';
-
 const Home = () => {
   const { loadRandom } = useContext(PicsContext);
   useEffect(() => {

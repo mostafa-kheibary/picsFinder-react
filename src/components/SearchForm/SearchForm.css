@@ -1,11 +1,11 @@
 .search {
   position: relative;
-  width: 500px;
+
   height: fit-content;
 }
 .search-input {
+  width: 500px;
   background-color: var(--gray);
-  width: 100%;
   padding: 13px 13px 13px 40px;
   border-radius: 50px;
   border: none;
